@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <script type="text/javascript" src="./js/pro.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+</head>
+<body>
+    <div class="some-page-wrapper">
+        <header class="header">
+            <p>Aim : Write a program that takes two operands and one operator from the user and perform the operation
+                and prints the result by using switch statement.</p>
+        </header>
+      
+        <div class='row'>
+          <div class='column'>
+            <div class='column1'>
+                <form name="myform" class="my-form" onsubmit="return false"autocomplete="off">
+                    <div class="form-group">
+                        <center><h1>Simulation:</h1></center> 
+                        <label for="" style="font-size: 20px;"> Enter First Number:  
+                            <input type="number" step="any"name="number1" id="firstNumber" min=0 style="border-radius: 4px; font-weight:bold; font-size:15px;" /></label> 
+                    </div>
+                       <div class="form-group" style="font-size: 18px;"> 
+                        <label for=""> Enter Second Number:  
+                            <input type="number" step="any" name="number2" id="secondNumber" min=0 style="border-radius: 4px;font-weight:bold; font-size:15px;"/></label> 
+                       </div>
+                    <div class="form-group">
+                        <label for="" style="font-size: 20px;">
+                        Select Operator:  
+                        <select id="options" style="border-radius: 4px; font-weight:bold; font-size:15px;">
+                            <option id=""></option>
+                            <option id="addition">+</option>
+                            <option id="subtraction">-</option>
+                            <option id="multiplication"><span style="font-size: 1px; text-align:center;">&#42;</span></option>
+                            <option id="division">&#47;</option>
+                            <option id="modulus">&#37;</option>
+                        </select>
+                        </label>
+                    </div>
+                          
+                    <div class="form-group">
+                        
+                            <button class="button" onclick="Calc()" class="but" style="font-size: 20px;">Calculate</button>
+                            <button type="button" id="next" onclick="calculate()" class="button" style="font-size: 20px;"> Show steps</button>
+                            <input class="button"type="reset" onclick="location.reload()" value="Reset" style="font-size: 20px;">
+                    
+                    </div> 
+                    <div class="form-group">
+                        <label for="">Value:
+                            <input type="text" id="result"style="border-radius: 4px; text-align:center; font-weight:bold;"/>
+                        </label>
+                       
+                    </div> 
+                    <div class="form-group">
+                    <label for="">Expression: 
+                    <input type="text" id="num1" style="width: 10%; height:10%; border-radius: 4px; text-align:center;font-weight:bold;"/>
+                    <input type="text" id="op"style="width: 10%; height:10%; border-radius: 4px; text-align:center;font-weight:bold;"/>
+                    <input type="text" id="num2"style="width: 10%; height:10%; border-radius: 4px;text-align:center;font-weight:bold;"/><b> =</b>
+                    <input type="text" id="res"style="width: 10%; height:10%; border-radius: 4px;text-align:center;font-weight:bold;"/>
+                </label>
+                    </div>
+                </form>
+                <br>
+            
+                <div class=row style="padding-top: 20px;">
+                    <div class='column'>
+                      <div class='column2'>
+                          <center><h1>Instruction:</h1></center>
+                          <ol type=1 style="font-size: 20px;">
+                              <li>Enter the 2 number in given column. </li>
+                              <li>Select the operator from the given option in operator section.</li>
+                              <li>Click on the Calculate button. </li>
+                              <li>After calculation value will be displayed in the Value section.</li>
+                              <li>Expression will be displayed in Expression section.</li>
+                              </ol>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+         
+            
+           
+              <div class="column">
+                  <div class="column3">
+                    <center><h2>Code:</h2></center>
+                    <p class="para" style="padding-left: 20px; font-family:Arial, Helvetica, sans-serif; font-size:18px;">
+                                #include<<x>stdio.h><br>
+        
+        <span class="step">int main() {</span><br>
+            <span class="step">char operator;<br>
+            double first, second;<br>
+            int m;</span><br>
+
+            
+            <span class="step">printf("Enter two operands: ");<br>
+            scanf("%lf %lf", &first, &second);</span><br>
+            <span class="step">printf("Enter an operator (+, -, *,/,mod): ");<br>
+            scanf("%c",&operator);</span><br>
+        
+            <span class="step">switch (operator){</span><br>
+                <span class="step">&nbsp case '+':</span><br>
+                <span class="step">&nbsp &nbsp  printf("%.3lf",first + second);</span><br>
+                <span class="step">&nbsp &nbsp break;</span><br>
+                <span class="step">&nbsp case '-':</span><br>
+                <span class="step">&nbsp &nbsp printf("%.3lf",first - second);</span><br>
+                <span class="step">&nbsp &nbsp break;</span><br>
+                <span class="step">&nbsp case '*':</span><br>
+                <span class="step">&nbsp &nbsp printf("%.3lf",first * second);</span><br>
+                <span class="step">&nbsp &nbsp    break;</span><br>
+                <span class="step">&nbsp case '/':</span><br>
+                <span class="step">&nbsp &nbsp   printf("%.3lf",first / second);</span><br>
+                <span class="step">&nbsp &nbsp  break;</span><br>
+                <span class="step">&nbsp case '%':</span><br>
+                <span class="step">&nbsp &nbsp   m=(int)(first)%(int)(second);</span><br>
+                <span class="step">&nbsp &nbsp   printf("%d",m);</span><br>
+                <span class="step">&nbsp &nbsp   break;</span>   <br>
+                <span class="step">&nbsp default:</span><br>
+                <span class="step">&nbsp&nbsp printf("Error! operator is not correct");</span><br>
+                <span class="step">}</span><br>
+                <span class="step">return 0;</span><br>
+                <span class="step">}</span>
+                         
+                         
+                 </p>
+                  </div>
+              </div>
+              
+        </div>
+    </div>
+    
+      
+    
+</body>
+</html>
